@@ -1,7 +1,7 @@
 <?php 
 	//$mysqli = new mysqli("localhost", "usuario", "senha", "database");
 	//nesta linha realizo a conexão
-	$conexao = new mysqli("localhost", "root", "senac", "loja");
+	require "include/connection.php";
 	//nesta linha, monto a consulta a ser realizada
 	$sql_produtos = "SELECT p.*, c.descricao as categoria 
 					 FROM produto p

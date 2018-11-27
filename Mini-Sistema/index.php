@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Formulário de Login</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-</head>
-<body>
+<?php include "layout/header.php"; 	
+?>
 <div class="contaner">
 	<p>&nbsp;</p>
 <!-- 	<p>&nbsp;</p> -->
@@ -46,7 +40,4 @@
 
 </div>
 
-
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-</body>
-</html>
+<?php include "layout/footer.php"; ?>
