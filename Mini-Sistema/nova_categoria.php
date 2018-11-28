@@ -4,7 +4,7 @@
 ?>
 <div class="container">
 	<p>&nbsp;</p>
-	<h1>Categorias</h1>
+	<h1>Nova Categoria</h1>
 	<div class="row">
 		 
 		<div class="col">
@@ -12,6 +12,7 @@
 			  <ol class="breadcrumb">
 			    <li class="breadcrumb-item"><a href="principal.php">Principal</a></li>
 			    <li class="breadcrumb-item active" aria-current="page">Categorias</li>
+			    <li class="breadcrumb-item active" aria-current="page">Nova Categoria</li>
 			  </ol>
 			</nav>
 		</div>

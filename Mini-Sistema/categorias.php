@@ -21,16 +21,24 @@
 	
 	<div class="row">
 		<a href="nova_categoria.php" class="btn btn-primary">Nova Categoria</a>
-		<a href="excluir-categoria.php" class="btn btn-warning">Excluir Categoria</a>
 		<table class="table table-bordered table-striped table-hover">
 			<tr>
 				<th>id</th>
 				<th>Categorias</th>
+				<th>Ações</th>
 			</tr>
 	<?php while($categoria = $categorias->fetch_array(MYSQLI_ASSOC)) { //aqui eu starto o loop dos dados da consulta ?>
 			<tr>
 				<td><?php echo $categoria["id"]; ?></td>
 				<td><?php echo $categoria["descricao"]; ?></td>
+				<td>
+					<a href="editarcategoria.php?id=<?php echo $categoria['id']; ?>" class="btn btn-success">
+						<i class="fas fa-edit"></i>
+					</a>
+					<a href="excluircategoria.php?id=<?php echo $categoria["id"];?>" class="btn btn-danger" onclick="return confirm('Deseja excluir ?')" title="Excluir">
+						<i class="fas fa-trash-alt"></i>
+					</a>
+				</td>
 			</tr>
 		<?php } ?>
 		</table>
