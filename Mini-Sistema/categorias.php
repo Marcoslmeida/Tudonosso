@@ -20,6 +20,11 @@
 	</div>
 	
 	<div class="row">
+		<?php if (isset($_GET['msg']) && isset($_GET['tipo_msg'])){ ?>
+		 	<div class="alert alert-<?php echo $_GET['tipo_msg']; ?> col-12">
+		 		<?php echo $_GET['msg']; ?>
+		 	</div>
+		 <?php } ?>
 		<a href="nova_categoria.php" class="btn btn-primary">Nova Categoria</a>
 		<table class="table table-bordered table-striped table-hover">
 			<tr>
