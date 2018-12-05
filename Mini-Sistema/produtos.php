@@ -27,7 +27,7 @@
 	</div>
 	<div class="row">
 		<?php if (isset($_GET['msg']) && isset($_GET['tipo_msg'])){ ?>
-		 	<div class="alert alert-<?php echo $_GET['tipo_msg']; ?> col-12">
+		 	<div class="alert alert-<?php echo $_GET['tipo_msg']; ?> col-12 esconde">
 		 		<?php echo $_GET['msg']; ?>
 		 	</div>
 		 <?php } ?>
@@ -51,7 +51,7 @@
 					<td><?php echo $produto['estoque']; ?></td>
 					<td><?php echo $produto['categoria'] ?></td>
 					<td>
-					<a href="editar-produtos.php?id=<?php echo $produto['id']; ?>" class="btn btn-success">
+					<a href="novo-produto.php?id=<?php echo $produto['id']; ?>" class="btn btn-success">
 						<i class="fas fa-edit"></i>
 					</a>
 					<a href="excluir-produtos.php?id=<?php echo $produto["id"];?>" class="btn btn-danger" onclick="return confirm('Deseja excluir ?')" title="Excluir">
