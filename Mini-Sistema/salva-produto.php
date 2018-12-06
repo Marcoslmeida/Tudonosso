@@ -1,5 +1,6 @@
  <?php 
 require "include/connection.php";
+$id = $_POST['id'];
 $nome = $_POST['nome'];
 $estoque = $_POST['estoque'];
 $valor = $_POST['valor'];
@@ -7,10 +8,16 @@ $valor = str_replace('.', '' , $valor);
 $valor = str_replace(',', '.' , $valor);
 $id_categoria = $_POST['id_categoria'];
 
-$sql_insere_produto = "INSERT INTO produto (nome, estoque, valor, id_categoria)
-							values ('{$nome}', '{$estoque}', '{$valor}', '{$id_categoria}' )";
-if($conexao->query($sql_insere_produto)){
+if($id != '') {
+	$sql_produto = "UPDATE produto SET nome = '{$nome}', valor = '{$valor}', estoque = '{$estoque}', id_categoria = '{$id_categoria}' WHERE id = {$id};";
+	$msg = "Produto alterado com sucesso!";
+} else {
+	$sql_produto = "INSERT INTO produto (nome, estoque, valor, id_categoria)
+					Values ('{$nome}', '{$estoque}', '{$valor}', '{$id_categoria}' )";
 	$msg = "Produto salvo com sucesso!";
+}
+
+if($conexao->query($sql_produto)){
 	$tipo_msg = "success";
 } else {
 	$msg = "Não foi possível salvar o produto!";

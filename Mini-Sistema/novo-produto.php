@@ -3,26 +3,27 @@
 	include "layout/menu.php";
 	require "include/connection.php";
 
+	$title = "Novo Produto";
 	if(isset($_GET['id']) && $_GET['id'] != '') {
 		$id = $_GET['id'];
 		$sql_product = "SELECT * FROM produto WHERE id = {$id};";
 		$produto = $conexao->query($sql_product);
 		$dados_product = $produto->fetch_assoc();
-
+		$title = "Editar Produto";
 	}
 	$sql_categorias = "SELECT * FROM categoria";
 	$categorias = $conexao->query($sql_categorias);
 ?>
 <div class="container">
 	<p>&nbsp;</p>
-	<h1>Novo Produto</h1>
+	<h1><?php echo $title ?></h1>
 	<div class="row">
 		<div class="col">
 			<nav aria-label="breadcrumb">
 			  <ol class="breadcrumb">
 			    <li class="breadcrumb-item"><a href="principal.php">Principal</a></li>
 			    <li class="breadcrumb-item active" aria-current="page"><a href="produtos.php">Produtos</a></li>
-			    <li class="breadcrumb-item active" aria-current="page">Novo Produto</li>
+			    <li class="breadcrumb-item active" aria-current="page"><?php echo $title ?></li>
 			  </ol>
 			</nav>
 		</div>
@@ -33,6 +34,7 @@
 					<div class="form-group">
 						<label for="nome">Nome:</label>
 						<input type="text" name="nome" id="nome" class="form-control" required value="<?php echo (isset($dados_product) ? $dados_product['nome'] : '')?>">
+						<input type="hidden" name="id" value="<?php echo (isset($dados_product) ? $dados_product['id'] : ''); ?>">
 					</div>
 				</div>
 
@@ -68,7 +70,7 @@
 						</select>
 
 					</div>
-					<button type="submit" class="btn btn-primary float-right">Salvar</button>
+					<button type="submit" class="btn btn-dark float-right">Salvar</button>
 				</div>
 			</div>
 		</form>

@@ -20,13 +20,15 @@
 	</div>
 	
 	<div class="row">
-		<?php if (isset($_GET['msg']) && isset($_GET['tipo_msg'])){ ?>
-		 	<div class="alert alert-<?php echo $_GET['tipo_msg']; ?> col-12">
-		 		<?php echo $_GET['msg']; ?>
-		 	</div>
-		 <?php } ?>
-		<a href="nova_categoria.php" class="btn btn-primary">Nova Categoria</a>
-		<table class="table table-bordered table-striped table-hover">
+		<div class="col">
+		<?php include "layout/Mensagem-get.php" ?>
+		<a href="nova_categoria.php" class="btn btn-dark mb-2">Nova Categoria</a>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+		<table class="table table-bordered table-striped table-hover table-dark">
 			<tr>
 				<th>id</th>
 				<th>Categorias</th>
@@ -47,6 +49,7 @@
 			</tr>
 		<?php } ?>
 		</table>
-	</div>
+		</div>
+		</div>
 </div>
 <?php include "layout/footer.php"; ?>

@@ -26,15 +26,14 @@
 		</div>
 	</div>
 	<div class="row">
-		<?php if (isset($_GET['msg']) && isset($_GET['tipo_msg'])){ ?>
-		 	<div class="alert alert-<?php echo $_GET['tipo_msg']; ?> col-12 esconde">
-		 		<?php echo $_GET['msg']; ?>
-		 	</div>
-		 <?php } ?>
-		<a href="novo-produto.php" class="btn btn-primary mb-2">Novo Produto</a>
+		<div class="col">
+		<?php include "layout/mensagem-get.php" ?>
+		<a href="novo-produto.php" class="btn btn-dark mb-2">Novo Produto</a>
+		</div>
 	</div>
 	<div class="row">
-		<table class="table table-bordered table-striped table-hover">
+		<div class="col">
+		<table class="table table-bordered table-striped table-hover table-dark">
 			<tr>
 				<th>#</th>
 				<th>Descrição</th>
@@ -63,9 +62,7 @@
 			<?php } //aqui finalizo o loop dos dados ?>
 		
 		</table>
-		
-		
-
+		</div>
 	</div>
 
 </div>
