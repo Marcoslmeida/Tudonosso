@@ -4,8 +4,13 @@ $id = $_POST['id'];
 $nome = $_POST['nome'];
 $email = $_POST['e-mail'];
 $senha = $_POST['senha'];
+$nova_senha = md5($senha);
 if($id != '') {
-	$sql_usuario = "UPDATE usuario SET nome = '{$nome}', email = '{$email}', senha = '{$senha}' WHERE id = {$id};";
+	if ($senha == '') {
+	$sql_usuario = "UPDATE usuario SET nome = '{$nome}', email = '{$email}' WHERE id = {$id};";
+	} else{
+	$sql_usuario = "UPDATE usuario SET nome = '{$nome}', email = '{$email}', senha = '{$nova_senha}' WHERE id = {$id};";
+	}
 	$msg = "Usuário alterado com sucesso!";
 } else {
 	$sql_usuario = "INSERT INTO usuario (nome, email, senha)

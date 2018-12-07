@@ -44,7 +44,8 @@
 				<div class="col-6">
 					<div class="form-group">
 						<label for="senha">Senha</label>
-						<input type="text" name="senha" id="senha" class="form-control" required value="<?php echo (isset($dados_usuario) ? $dados_usuario['senha'] : '')?>">
+						<input type="password" name="senha" id="senha" class="form-control" <?php echo(isset($dados_usuario) ? '' : 'required') ?>
+						>
 					</div>
 				</div>
 			</div>

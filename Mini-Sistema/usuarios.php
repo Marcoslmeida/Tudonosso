@@ -31,13 +31,14 @@
 				<th>Id</th>
 				<th>Nome</th>
 				<th>Email</th>
+				<th>Ações</th>
 			</tr>
 		<?php while ($usuario = $usuarios->fetch_array(MYSQLI_ASSOC)) { ?>
 			<tr>
 				<td><?php echo $usuario ["id"]; ?></td>
 				<td><?php echo $usuario ["nome"]; ?></td>
 				<td><?php echo $usuario ["email"]; ?></td>
-				<td>
+				<td> 
 					<a href="novo-usuario.php?id=<?php echo $usuario['id']; ?>" class="btn btn-success">
 						<i class="fas fa-edit"></i>
 					</a>
