@@ -50,10 +50,10 @@
 					<td><?php echo $funcionario['cpf'] ?></td>
 					<td><?php echo $funcionario['nome']; ?></td>
 					<td><?php echo $funcionario['matricula'] ?></td>
-					<td><?php echo $funcionario['dt_nascimento'] ?></td>
+					<td><?php echo date('d/m/y', strtotime($funcionario['dt_nascimento'])) ?></td>
 					<td><?php echo $funcionario['telefone'] ?></td>
 					<td><?php echo $funcionario['email'] ?></td>
-					<td><?php echo $funcionario['dt_admissao'] ?></td>
+					<td><?php echo date('d/m/Y', strtotime($funcionario['dt_admissao'])) ?></td>
 					<td>
 					<a href="novo-funcionario.php?id=<?php echo $funcionario['id']; ?>" class="btn btn-success">
 						<i class="fas fa-edit" width="50"></i>

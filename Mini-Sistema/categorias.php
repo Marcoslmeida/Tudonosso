@@ -32,12 +32,14 @@
 			<tr>
 				<th>id</th>
 				<th>Categorias</th>
+				<th>Tipo</th>
 				<th>Ações</th>
 			</tr>
 	<?php while($categoria = $categorias->fetch_array(MYSQLI_ASSOC)) { //aqui eu starto o loop dos dados da consulta ?>
 			<tr>
 				<td><?php echo $categoria["id"]; ?></td>
 				<td><?php echo $categoria["descricao"]; ?></td>
+				<td><?php echo $categoria["tipo"]; ?></td>
 				<td>
 					<a href="editarcategoria.php?id=<?php echo $categoria['id']; ?>" class="btn btn-success">
 						<i class="fas fa-edit"></i>

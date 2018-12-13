@@ -1,9 +1,9 @@
 <?php 
 	require "include/connection.php";
 	$id = $_GET['id'];
-	$sql_delete_cargo = "DELETE FROM cargo WHERE id = {$id}";
-/*print_r($sql_delete_cargo); exit;*/
-	if($conexao->query($sql_delete_cargo)) {
+	$sql_delete_servico = "DELETE FROM servicos WHERE id = {$id}";
+/*print_r($sql_delete_servico); exit*/;
+	if($conexao->query($sql_delete_servico)) {
 	$msg = 'Excluído com sucesso!';
 	$tipo_msg = 'success';
 } else{
