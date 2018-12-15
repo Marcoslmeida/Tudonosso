@@ -20,9 +20,13 @@
 <div class="row">
 	<div class="col">
 		<form method="post" action="salvar-categoria.php">
-			<div class="form-group">
+			<div class="col-6 form-group">
 				<label for="descricao">Descrição</label>
 				<input type="text" name="descricao" id="descricao" class="form-control" required>
+			</div>
+			<div class="col-6 form-group">
+				<label for="tipo">Tipo</label>
+				<input type="text" name="tipo" id="tipo" class="form-control" required>
 			</div>
 			<button class="btn btn-success" type="submit">Salvar</button>
 		</form>

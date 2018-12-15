@@ -1,5 +1,11 @@
-<?php include "layout/header.php"; 	
-?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulário de Login</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
 <div class="contaner">
 	<p>&nbsp;</p>
 <!-- 	<p>&nbsp;</p> -->
@@ -13,7 +19,11 @@
 						<img src="img/login.png" width="130px" class="img-fluid">
 					</div>
 					<h3 class="text-center">Área restrita</h3>
-
+					<?php if(isset($_GET['msg']) && isset($_GET['tipo_msg'])) { ?>
+						<div class="alert alert-<?php echo $_GET['tipo_msg']; ?> esconde">
+							<?php echo $_GET['msg']; ?>
+						</div>
+					<?php } ?>
 					<?php if(isset($_GET['msg']) && $_GET['msg'] == 'erro') { ?>
 						<div class="alert alert-danger">
 							<p class="text-center">A senha digita está incorreta</p>
@@ -21,16 +31,16 @@
 						</div>
 					<?php } ?>
 
-					<form method="post" action="principal.php">
+					<form method="post" action="login.php">
 						<div class="form-group">
 							<label>Login:</label>
-							<input type="text" name="login" class="form-control" placeholder="Digite seu usuário" >
+							<input type="email" name="login" class="form-control" placeholder="Digite seu usuário" autofocus>
 						</div>
 						<div class="form-group">
 							<label>Senha:</label>
 							<input type="password" name="senha" class="form-control" placeholder="Digite sua senha" >
 						</div>
-						<button type="submit" class="btn btn-primary float-right">Entrar</button>
+						<button type="submit" class="btn btn-primary float-right">Logar</button>
 					</form>
 				</div>
 			</div>
@@ -40,4 +50,7 @@
 
 </div>
 
-<?php include "layout/footer.php"; ?>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

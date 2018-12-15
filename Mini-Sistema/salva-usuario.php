@@ -14,7 +14,7 @@ if($id != '') {
 	$msg = "Usuário alterado com sucesso!";
 } else {
 	$sql_usuario = "INSERT INTO usuario (nome, email, senha)
-					Values ('{$nome}', '{$email}', '{$senha}')";
+					Values ('{$nome}', '{$email}', '{$nova_senha}')";
 	$msg = "Usuário salvo com sucesso!";
 }
 

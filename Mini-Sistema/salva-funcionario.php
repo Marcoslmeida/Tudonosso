@@ -9,15 +9,16 @@ $dt_nascimento = $_POST['dt_nascimento'];
 $telefone = $_POST['telefone'];
 $email = $_POST['email'];
 $dt_admissao = $_POST['dt_admissao'];
+$sexo = $_POST['sexo'];
 
 
 if($id != '') {
-	$sql_funcionario = "UPDATE funcionarios SET id_cargo = '{$id_cargo}', cpf = '{$cpf}', nome = '{$nome}', matricula = '{$matricula}', dt_nascimento = '{$dt_nascimento}', telefone = '{$telefone}', email = '{$email}', dt_admissao = '{$dt_admissao}' WHERE id = {$id};";
+	$sql_funcionario = "UPDATE funcionarios SET id_cargo = '{$id_cargo}', cpf = '{$cpf}', nome = '{$nome}', matricula = '{$matricula}', dt_nascimento = '{$dt_nascimento}', telefone = '{$telefone}', email = '{$email}', dt_admissao = '{$dt_admissao}', sexo = '{$sexo}' WHERE id = {$id};";
 	/*print_r($sql_funcionario); exit;*/
 	$msg = "Funcionario alterado com sucesso!";
 } else {
-	$sql_funcionario = "INSERT INTO funcionarios (id_cargo, cpf, nome, matricula, dt_nascimento, telefone, email, dt_admissao)
-					Values ('{$id_cargo}', '{$cpf}', '{$nome}', '{$matricula}', '{$dt_nascimento}', '{$telefone}', '{$email}', '{$dt_admissao}' )";
+	$sql_funcionario = "INSERT INTO funcionarios (id_cargo, cpf, nome, matricula, dt_nascimento, telefone, email, dt_admissao, sexo)
+					Values ('{$id_cargo}', '{$cpf}', '{$nome}', '{$matricula}', '{$dt_nascimento}', '{$telefone}', '{$email}', '{$dt_admissao}', '{$sexo}' )";
 	$msg = "Funcionario salvo com sucesso!";
 }
 

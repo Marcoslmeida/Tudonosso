@@ -40,6 +40,7 @@
 				<th>Telefone</th>
 				<th>Email</th>
 				<th>Data de Admissão</th>
+				<th>Sexo</th>
 				<th>Ações</th>
 
 			</tr>
@@ -54,12 +55,13 @@
 					<td><?php echo $funcionario['telefone'] ?></td>
 					<td><?php echo $funcionario['email'] ?></td>
 					<td><?php echo date('d/m/Y', strtotime($funcionario['dt_admissao'])) ?></td>
+					<td><?php echo $funcionario['sexo']; ?></td>
 					<td>
-					<a href="novo-funcionario.php?id=<?php echo $funcionario['id']; ?>" class="btn btn-success">
-						<i class="fas fa-edit" width="50"></i>
+					<a href="novo-funcionario.php?id=<?php echo $funcionario['id']; ?>">
+						<i class="fas fa-edit btn btn-success"></i>
 					</a>
-					<a href="excluir-funcionarios.php?id=<?php echo $funcionario["id"];?>" class="btn btn-danger" onclick="return confirm('Deseja excluir ?')" title="Excluir">
-						<i class="fas fa-trash-alt" width="50"></i>
+					<a href="excluir-funcionarios.php?id=<?php echo $funcionario["id"];?>" onclick="return confirm('Deseja excluir ?')" title="Excluir">
+						<i class="fas fa-trash-alt btn btn-danger"></i>
 					</a>
 				</td>
 				</tr>

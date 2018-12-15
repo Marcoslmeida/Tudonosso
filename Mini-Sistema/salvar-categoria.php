@@ -2,9 +2,9 @@
 require "include/connection.php"; //incluindo conexão
 
 $descricao = $_POST['descricao']; //recebendo variável
-
-$sql_insere_categoria = "INSERT INTO categoria (descricao) VALUES ('{$descricao}')";
-
+$tipo = $_POST['tipo'];
+$sql_insere_categoria = "INSERT INTO categoria (descricao, tipo) VALUES ('{$descricao}','{$tipo}')";
+print_r($sql_insere_categoria); exit;
 if($conexao->query($sql_insere_categoria)){
 	$msg = 'Registro salvo com sucesso!';
 	$tipo_msg = 'success';

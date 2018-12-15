@@ -72,12 +72,6 @@
 				</div>
 				<div class="col-6">
 					<div class="form-group">
-						<label for="dt_nascimento">Data de Nascimento:</label>
-						<input type="date" name="dt_nascimento" id="dt_nascimento" class="form-control" required value="<?php echo (isset($dados_funcionario) ? $dados_funcionario['dt_nascimento'] : '')?>">
-					</div>
-				</div>
-				<div class="col-6">
-					<div class="form-group">
 						<label for="telefone">Telefone:</label>
 						<input type="text" name="telefone" id="telefone" class="form-control" required value="<?php echo (isset($dados_funcionario) ? $dados_funcionario['telefone'] : '')?>">
 					</div>
@@ -88,10 +82,22 @@
 						<input type="email" name="email" id="email" class="form-control" required value="<?php echo (isset($dados_funcionario) ? $dados_funcionario['email'] : '')?>">
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-3">
+					<div class="form-group">
+						<label for="dt_nascimento">Data de Nascimento:</label>
+						<input type="date" name="dt_nascimento" id="dt_nascimento" class="form-control" required value="<?php echo (isset($dados_funcionario) ? $dados_funcionario['dt_nascimento'] : '')?>">
+					</div>
+				</div>
+				<div class="col-3">
 					<div class="form-group">
 						<label for="dt_admissao">Data de Admissão:</label>
 						<input type="date" name="dt_admissao" id="dt_admissao" class="form-control" required value="<?php echo (isset($dados_funcionario) ? $dados_funcionario['dt_admissao'] : '')?>">
+					</div>
+				</div>
+				<div class="col-1">
+					<div class="form-group">
+						<label for="sexo">Sexo:</label>
+						<input type="sexo" name="sexo" id="sexo" class="form-control" required value="<?php echo (isset($dados_funcionario) ? $dados_funcionario['sexo'] : '')?>">
 					</div>
 				</div>
 			</div>
